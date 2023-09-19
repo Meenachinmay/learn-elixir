@@ -25,7 +25,8 @@ defmodule HelloWeb.UserSocket do
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
   @impl true
-  def connect(_params, socket, _connect_info) do
+  def connect(%{"params" => %{"token" => token}}, socket, _connect_info) do
+    IO.inspect(token, label: "params from socket.connect() method from client printing in connect method")
     {:ok, socket}
   end
 

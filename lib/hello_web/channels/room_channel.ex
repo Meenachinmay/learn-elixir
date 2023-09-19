@@ -3,7 +3,8 @@ defmodule HelloWeb.RoomChannel do
 
   @impl true
   def join("room:lobby", payload, socket) do
-    {:ok, socket}
+    IO.inspect(payload, label: "Payload from React client printing in join method in channel class")
+    {:ok,socket}
   end
 
   # Channels can be used in a request/response fashion
@@ -28,7 +29,7 @@ defmodule HelloWeb.RoomChannel do
   end
 
   # Add authorization logic here as required.
-  defp authorized?(_payload) do
-    true
-  end
+  # defp authorized?(_payload) do
+  #   true
+  # end
 end
