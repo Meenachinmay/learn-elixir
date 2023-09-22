@@ -6,7 +6,7 @@ defmodule HelloWeb.Router do
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, html: {HelloWeb.Layouts, :root}
-    plug :protect_from_forgery
+    # plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
@@ -19,6 +19,7 @@ defmodule HelloWeb.Router do
 
     get "/", PageController, :home
     get "/test", TestController, :home
+    get "/test-email", TestController, :create
   end
 
   # Other scopes may use custom stacks.
