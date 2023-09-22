@@ -19,7 +19,8 @@ defmodule HelloWeb.Router do
 
     get "/", PageController, :home
     get "/test", TestController, :home
-    get "/test-email", TestController, :create
+    post "/test-email", TestController, :create
+    post "/user-params", TestController, :getData
   end
 
   # Other scopes may use custom stacks.
